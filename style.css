@@ -1,0 +1,167 @@
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+  /* https: //kaffeenj-frontend-mentor.vercel.app/huddle-landing-page */
+
+  :root {
+      --primary-pink: hsl(322, 100%, 66%);
+      --primary-light-pink: hsl(321, 100%, 78%);
+      --primary-light-red: hsl(0, 100%, 63%);
+      --neutral-dark-cyan: hsl(192, 100%, 9%);
+      --neutral-dark-blue: hsl(207, 100%, 98%);
+  }
+
+  header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 6em;
+  }
+
+  .main__logo-top {
+      width: 25%;
+  }
+
+  .main__cta-top {
+      /* Diese Style noch überarbeiten */
+      background-color: #fff;
+      border-color: var(--primary-pink);
+      border-radius: 50px;
+      box-shadow: none;
+      color: var(--primary-pink);
+      padding: 0 1em;
+
+  }
+
+  body {
+      box-sizing: border-box;
+      font-family: 'Poppins',
+          sans-serif;
+      /* padding: 2em; */
+  }
+
+  h2,
+  p {
+      text-align: center;
+  }
+
+  img {
+      width: 90%;
+  }
+
+  .main__hero {
+      text-align: center;
+      margin-bottom: 6em;
+  }
+
+  .main__hero-btn {
+      background-color: var(--primary-pink);
+      border: none;
+      border-radius: 50px;
+      color: var(--neutral-dark-blue);
+      margin: 2em 0 4em;
+      padding: 1em 2em;
+  }
+
+  .main__hero-figure-flex {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 7em;
+  }
+
+  /* Abstand der Elemente checken. Warum funktioniert space-between nicht? */
+
+  /* Hier nochmal besser zentrieren */
+  .main__hero-figure__capital {
+      font-size: 2.5rem;
+  }
+
+  /* Checken, warum nicht sichtbar */
+  .main__hero-figure__left::before {}
+
+  /* Warum skaliert der Hintergrund nicht mit? */
+
+  .bgPattern {
+      width: 100vw;
+      background-repeat: no-repeat;
+      background-position: center;
+  }
+
+  .content__bgPatternTop-1 {
+      background: url('./images/bg-section-top-mobile-1.svg');
+      height: 112px;
+      width: 100vw;
+      background-repeat: no-repeat;
+
+  }
+
+  .content__bgPatternBottom-1 {
+      background: url('./images/bg-section-bottom-mobile-1.svg');
+      background-position: center;
+      height: 52px;
+      background-repeat: no-repeat;
+  }
+
+  .main__grow-flex {
+      display: flex;
+      flex-direction: column;
+      background-color: var(--neutral-dark-blue);
+  }
+
+  .main__grow-img {
+      order: 1;
+  }
+
+  .main__grow-text {
+
+      order: 2;
+  }
+
+
+  .bg__users-mobile__top2 {
+      background-image: url('./images/bg-section-top-mobile-2.svg');
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 112px;
+  }
+
+
+  .main__users-flex {
+      background-color: var(--neutral-dark-blue);
+  }
+
+  .bg__users-mobile__bottom2 {
+      background-image: url('./images/bg-section-bottom-mobile-2.svg');
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 112px;
+  }
+
+
+  .bg__footer__top-mobile {
+      background-image: url('./images/bg-footer-top-mobile.svg');
+      background-repeat: no-repeat;
+      height: 120px;
+  }
+
+  footer {
+      background-color: var(--neutral-dark-cyan);
+      color: #fff;
+
+  }
+
+  .footer__left {
+      display: flex;
+      flex-direction: column;
+  }
+
+
+  @media(min-width: 1440px) {}
+
+  .attribution {
+      font-size: 11px;
+      text-align: center;
+  }
+
+  .attribution a {
+      color: hsl(228, 45%, 44%);
+  }
