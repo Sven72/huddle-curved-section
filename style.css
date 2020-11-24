@@ -16,6 +16,10 @@ header {
   margin-bottom: 6em;
 }
 
+main {
+  margin-bottom: 25vh;
+}
+
 .main__logo-top {
   width: 25%;
 }
@@ -77,8 +81,6 @@ img {
 .main__hero-figure__left::before {
 }
 
-/* Warum skaliert der Hintergrund nicht mit? */
-
 .content__bgPatternTop-1 {
   background: url("./images/bg-section-top-mobile-1.svg");
   height: 112px;
@@ -101,11 +103,18 @@ img {
   background-color: var(--neutral-dark-blue);
 }
 
-.main__grow-img {
-  order: 1;
-}
 
 .main__grow-text {
+  order: 2;
+}
+
+.main__conversation-flex {
+  display: flex;
+  flex-direction: column;
+  margin: 25vh 0;
+}
+
+.main__conversation-text {
   order: 2;
 }
 
@@ -114,33 +123,127 @@ img {
   background-position: center;
   background-repeat: no-repeat;
   height: 112px;
+  background-size: 100% 100%;
 }
 
 .main__users-flex {
   background-color: var(--neutral-dark-blue);
+  /* Ich brauche den Margin, damit es beim Hintergrund richtig anschließt. Geht das auch ohne? */
+  display: flex;
+  flex-direction: column;
+  margin-top: -2em;
+}
+.main__users-img {
+  display: block;
+  order: 1;
+}
+.main__users-text {
+   display: block;
+   order: 2;
 }
 
+.main__end-head {
+  display: block;
+  line-height: 1.5;
+  margin: 2em auto;
+  width: 90%;
+}
 .bg__users-mobile__bottom2 {
   background-image: url("./images/bg-section-bottom-mobile-2.svg");
   background-position: center;
   background-repeat: no-repeat;
   height: 112px;
+  background-size: 100% 100%;
 }
 
 .bg__footer__top-mobile {
   background-image: url("./images/bg-footer-top-mobile.svg");
   background-repeat: no-repeat;
   height: 120px;
+  background-size: 100% 100%;
 }
 
+/* FOOTER */
 footer {
   background-color: var(--neutral-dark-cyan);
   color: #fff;
+  display: flex;
+  flex-direction: column;
 }
 
 .footer__left {
   display: flex;
+  order: 2;
   flex-direction: column;
+}
+
+/* Farbe des SVG Logos ändern */
+.footer__logo {
+}
+
+.footer__left-legal-text {
+  text-align: left;
+}
+
+/* Style Telefon und Mail */
+.fas {
+  width:em;
+}
+
+
+
+.footer__right-head {
+  text-align: left;
+}
+
+.footer__left__some-icons {
+  display: flex;
+  justify-content: flex-start;
+  margin;
+}
+
+
+.footer__right-input-flex {
+  margin-bottom: 15vh;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footer__right-copy {
+  text-align: left;
+}
+
+.footer__input {
+  display: block;
+  width: 90%;
+  /* margin: 0 auto; */
+}
+
+/* Button rechts außen positionieren!!!! */
+.footer__button {
+  background-color:var(--primary-pink);
+  border-radius: 5px;
+  color: #fff;
+  display: block;
+  justify-content: flex-end;
+  margin-top: 1em;
+  padding: 0.75em 1em;
+}
+
+/* Größe der some Icons ändern */
+.fab {
+  width: 2em;
+}
+
+/* HELPERS */
+
+.middle {
+  display: block;
+  margin: 0 auto;
+}
+
+.lh {
+  line-height: 1.5;
 }
 
 @media (min-width: 1440px) {
