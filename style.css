@@ -2,6 +2,9 @@
 
 /* https: //kaffeenj-frontend-mentor.vercel.app/huddle-landing-page */
 
+* {
+  box-sizing: border-box;
+}
 :root {
   --primary-pink: hsl(322, 100%, 66%);
   --primary-light-pink: hsl(321, 100%, 78%);
@@ -18,6 +21,7 @@ header {
 
 main {
   margin-bottom: 25vh;
+  padding: 0 2em;
 }
 
 .main__logo-top {
@@ -37,7 +41,6 @@ main {
 body {
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-  /* padding: 2em; */
 }
 
 h2,
@@ -46,7 +49,7 @@ p {
 }
 
 img {
-  width: 90%;
+  width: 100%;
 }
 
 .main__hero {
@@ -70,15 +73,18 @@ img {
   margin-bottom: 7em;
 }
 
-/* Abstand der Elemente checken. Warum funktioniert space-between nicht? */
-
-/* Hier nochmal besser zentrieren */
-.main__hero-figure__capital {
-  font-size: 2.5rem;
+.main__hero-figure__left {
+  padding-bottom: 5em;
 }
 
-/* Checken, warum nicht sichtbar */
-.main__hero-figure__left::before {
+.main__hero-figure__img {
+  width: 2em;
+}
+
+/* Abstand der Elemente checken. Warum funktioniert space-between nicht? */
+
+.main__hero-figure__capital {
+  font-size: 4.5rem;
 }
 
 .content__bgPatternTop-1 {
@@ -102,7 +108,6 @@ img {
   flex-direction: column;
   background-color: var(--neutral-dark-blue);
 }
-
 
 .main__grow-text {
   order: 2;
@@ -128,9 +133,9 @@ img {
 
 .main__users-flex {
   background-color: var(--neutral-dark-blue);
-  /* Ich brauche den Margin, damit es beim Hintergrund richtig anschließt. Geht das auch ohne? */
   display: flex;
   flex-direction: column;
+  /* Ich brauche den Margin, damit es beim Hintergrund richtig anschließt. Geht das auch ohne? */
   margin-top: -2em;
 }
 .main__users-img {
@@ -138,8 +143,8 @@ img {
   order: 1;
 }
 .main__users-text {
-   display: block;
-   order: 2;
+  display: block;
+  order: 2;
 }
 
 .main__end-head {
@@ -159,7 +164,7 @@ img {
 .bg__footer__top-mobile {
   background-image: url("./images/bg-footer-top-mobile.svg");
   background-repeat: no-repeat;
-  height: 120px;
+  height: 60px;
   background-size: 100% 100%;
 }
 
@@ -169,6 +174,7 @@ footer {
   color: #fff;
   display: flex;
   flex-direction: column;
+  padding: 2em;
 }
 
 .footer__left {
@@ -179,6 +185,9 @@ footer {
 
 /* Farbe des SVG Logos ändern */
 .footer__logo {
+  filter: invert(99%) sepia(91%) saturate(2%) hue-rotate(97deg) brightness(113%)
+    contrast(100%);
+  width: 70%;
 }
 
 .footer__left-legal-text {
@@ -187,10 +196,16 @@ footer {
 
 /* Style Telefon und Mail */
 .fas {
-  width:em;
+  display: block;
+  margin-bottom: 1em;
 }
 
+/* adjacent sibling */
+.fas + .fas {
+  margin-bottom: 3em;
+}
 
+/* Telefon und eMail eher grau. Mit after: ?*/
 
 .footer__right-head {
   text-align: left;
@@ -199,9 +214,7 @@ footer {
 .footer__left__some-icons {
   display: flex;
   justify-content: flex-start;
-  margin;
 }
-
 
 .footer__right-input-flex {
   margin-bottom: 15vh;
@@ -215,18 +228,20 @@ footer {
 
 .footer__input {
   display: block;
-  width: 90%;
-  /* margin: 0 auto; */
+  width: 100%;
+  padding: 1em;
+  border-radius: 10px;
 }
 
 /* Button rechts außen positionieren!!!! */
 .footer__button {
-  background-color:var(--primary-pink);
+  background-color: var(--primary-pink);
   border-radius: 5px;
   color: #fff;
   display: block;
   justify-content: flex-end;
   margin-top: 1em;
+  margin-left: auto;
   padding: 0.75em 1em;
 }
 
@@ -244,6 +259,19 @@ footer {
 
 .lh {
   line-height: 1.5;
+}
+
+.fw {
+  width: 100%;
+}
+
+.grey-accent {
+  color: darkgrey;
+}
+
+.footer-gap {
+  margin-left: 2ch;
+  font-family: "Poppins", sans-serif;
 }
 
 @media (min-width: 1440px) {
