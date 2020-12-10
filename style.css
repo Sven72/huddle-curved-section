@@ -5,6 +5,7 @@
 *::after {
   box-sizing: border-box;
 }
+
 :root {
   --primary-pink: hsl(322, 100%, 66%);
   --primary-light-pink: hsl(321, 100%, 78%);
@@ -13,15 +14,14 @@
   --neutral-dark-blue: hsl(207, 100%, 98%);
 }
 
+body {
+  x-overflow: hidden;
+}
+
 header {
   display: flex;
   justify-content: space-between;
-  /* margin-bottom: -3em; */
   margin: 0 2em -3em;
-}
-
-main {
-  /* margin: 0 2em 0; */
 }
 
 .main__logo-top {
@@ -29,7 +29,6 @@ main {
 }
 
 .main__cta-top {
-  /* Diese Style noch überarbeiten */
   background-color: #fff;
   border-color: var(--primary-light-pink);
   border-radius: 20px;
@@ -47,6 +46,10 @@ button {
   cursor: pointer;
 }
 
+button:hover {
+  background-color: var(--primary-light-pink);
+}
+
 h2,
 p {
   text-align: center;
@@ -56,9 +59,12 @@ img {
   width: 100%;
 }
 
+
+
 .main__hero-headline {
   font-weight: 600;
 }
+
 .main__hero {
   text-align: center;
   margin-bottom: 6em;
@@ -95,8 +101,6 @@ img {
   width: 2em;
 }
 
-/* Abstand der Elemente checken. Warum funktioniert space-between nicht? */
-
 .main__hero-figure__capital {
   font-size: 4.5rem;
 }
@@ -105,7 +109,6 @@ img {
   background: url("./images/bg-section-top-mobile-1.svg");
   height: 112px;
   background-repeat: no-repeat;
-  /* Hatte Probleme, bg richtgig zu plazieren. Das löst sie: width | heigt */
   background-size: 100% 100%;
 }
 
@@ -149,13 +152,14 @@ img {
   background-color: var(--neutral-dark-blue);
   display: flex;
   flex-direction: column;
-  /* Ich brauche den Margin, damit es beim Hintergrund richtig anschließt. Geht das auch ohne? */
   margin-top: -2em;
 }
+
 .main__users-img {
   display: block;
   order: 1;
 }
+
 .main__users-text {
   display: block;
   order: 2;
@@ -165,12 +169,14 @@ img {
   margin-top: 9rem;
   margin-bottom: 19rem;
 }
+
 .main__end-head {
   display: block;
   line-height: 1.5;
   margin: 2em auto;
   width: 90%;
 }
+
 .bg__users-mobile__bottom2 {
   background-image: url("./images/bg-section-bottom-mobile-2.svg");
   background-position: center;
@@ -203,13 +209,13 @@ footer {
 
 /* Farbe des SVG Logos ändern */
 .footer__logo {
-  filter: invert(99%) sepia(91%) saturate(2%) hue-rotate(97deg) brightness(113%)
-    contrast(100%);
-  width: 70%;
+  filter: invert(99%) sepia(91%) saturate(2%) hue-rotate(97deg) brightness(113%) contrast(100%);
+  width: 50%;
 }
 
 .footer__left-legal-text {
   text-align: left;
+  width: 80%;
 }
 
 /* Style Telefon und Mail */
@@ -219,8 +225,12 @@ footer {
 }
 
 /* adjacent sibling */
-.fas + .fas {
+.fas+.fas {
   margin-bottom: 3em;
+}
+
+.fab:hover {
+  color: var(--neutral-dark-cyan);
 }
 
 /* Telefon und eMail eher grau. Mit after: ?*/
@@ -249,6 +259,7 @@ footer {
   width: 100%;
   padding: 1em;
   border-radius: 10px;
+  height: 4em;
 }
 
 /* Button rechts außen positionieren!!!! */
@@ -257,10 +268,10 @@ footer {
   border-radius: 5px;
   color: #fff;
   display: block;
-  justify-content: flex-end;
   margin-top: 1em;
   margin-left: auto;
-  padding: 0.75em 1em;
+  padding: 0.75em 2em;
+  height: 4em;
 }
 
 /* Größe der some Icons ändern */
@@ -281,7 +292,7 @@ footer {
 }
 
 .fw {
-  width: 100%;
+  /* width: 100%; */
 }
 
 .grey-accent {
@@ -301,15 +312,17 @@ footer {
   padding: 6em 0 6em;
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1200px) {
   .main__hero-figure-flex {
     /* Hier alles an paddings etc. von oben rausnehmen */
     flex-direction: row;
     justify-content: space-around;
   }
+
   .main__grow-flex {
     flex-direction: row;
   }
+
   .main__grow-text {
     order: 0;
     /* Clamp etc | max-width checken */
@@ -325,6 +338,7 @@ footer {
     letter-spacing: 4px;
     padding-bottom: 0.5em;
   }
+
   .main__hero-copy {
     width: 30%;
     max-width: 500px;
@@ -362,23 +376,28 @@ footer {
   .main__conversation-flex {
     flex-direction: row;
   }
+
   .main__conversation-text {
     padding-left: 4em;
     max-width: 600px;
     align-self: center;
   }
+
   .main__users-flex {
     flex-direction: row;
   }
+
   .main__users-text {
     order: 1;
     /* Clamp etc | max-width checken */
     max-width: 600px;
     align-self: center;
   }
+
   .main__hero-figure__left {
     padding-bottom: 0;
   }
+
   .main__end h2 {
     text-align: center;
   }
@@ -389,6 +408,10 @@ footer {
 
   .footer__left {
     order: 0;
+  }
+
+  .footer__right {
+    width: 60%;
   }
 
   .bg__footer__top-mobile {
@@ -403,6 +426,16 @@ footer {
 
   .footer__right-input-flex {
     flex-direction: row;
+  }
+
+  .footer__right-copy {
+    width: 70%;
+  }
+
+  .footer__right-input-flex button {
+    margin-left: 2em;
+    padding: 0.75em;
+    margin-top: 0;
   }
 
   .footer__input {
